@@ -66,6 +66,22 @@
 				<button type="button" class="btn btn-default" onclick="login();">Submit</button>
 
 
+				<!-- <form action="/login" method="POST">
+					<div class="form-group">
+						<label for="identifiant">Name:</label> <input type="text"
+							class="form-control" id="id">
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label> <input type="password"
+							class="form-control" id="pwd">
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox"> Remember me</label>
+					</div>
+					<button type="button" class="btn btn-default" onclick="login();">Submit</button>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form> -->
+
 			</div>
 
 		</div>
@@ -89,21 +105,17 @@
 		src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 	<script>
-		function login2(){
-			
-		}
-	
 		function login() {
 			jQuery.ajax({
-				type : 'GET',
-				url : 'login',
+				type : 'POST',
+				url : '/login',
 				data : {
 					id : $('#id').val(),
 					pwd : $('#pwd').val()
 				},
 				success : function(result) {
 					console.log(result);
-					location.reload();
+					window.location = "http://localhost:8888/index";
 
 				},
 				error : function() {
@@ -116,7 +128,7 @@
 
 			jQuery.ajax({
 				type : 'GET',
-				url : 'api', 
+				url : '/api', 
 				data : { 
 					button : "quit"
 				},

@@ -66,7 +66,23 @@
 				
 				<div id="messageView" class="messageview">
 				
-				
+				<%-- <c:forEach items="${ms}" var="message">
+
+					<div class="card mb-4 animated fadeIn">
+						<div class="card-body">
+							<h2 class="card-title">${ message.content }</h2>
+							<p class="card-text">Ecrit par ${ message.author }</p>
+							
+						</div>
+						<div class="card-footer text-muted">
+						   <button name="buttonLike" type="button"  class="btn btn-success"><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></button>
+						  <button name="buttonRemove" type="button" onclick="removeMessage('${ message.id }')" class="btn btn-danger"><i onclick="like(this)" class="fa fa-trash fa-lg" aria-hidden="true"></i></button> 
+						  
+							Posted on ${ message.date } 
+						</div>
+						
+					</div>
+				</c:forEach> --%>
 				
 				</div>
 				
@@ -122,7 +138,7 @@
 		function getMessages() {
 			jQuery.ajax({
 				type: 'GET',
-				url: 'api',
+				url: '/api',
 				data: {
 					button : "lookup"
 				},
@@ -149,7 +165,7 @@
 		function updateView() {
 			jQuery.ajax({
 				type: 'GET',
-				url: 'api',
+				url: '/api',
 				data: {
 					button : "lookup"
 				},
@@ -191,7 +207,7 @@
 
 			jQuery.ajax({
 				type : 'GET',
-				url : 'api', 
+				url : '/api', 
 				data : { 
 					button : "Add Message",
 					content : content
@@ -215,7 +231,7 @@
 
 			jQuery.ajax({
 				type : 'GET',
-				url : 'api', 
+				url : '/api', 
 				data : { 
 					button : "removeMessage",
 					id : id
@@ -233,7 +249,7 @@
 
 			jQuery.ajax({
 				type : 'GET',
-				url : 'api', 
+				url : '/api', 
 				data : { 
 					button : "quit"
 				},
