@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:file:data/bdd</property>
+        <!-- <property name="connection.url">jdbc:hsqldb:hsql://localhost/database1</property> -->
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <!-- Enable Hibernate's current session context -->
+        <!-- <property name="current_session_context_class">org.hibernate.context.ManagedSessionContext</property> -->
+		<property name="current_session_context_class">thread</property>
+
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.cache.use_query_cache">false</property>
+        
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <!-- Mapping files -->
+        <mapping class ="beans.Message" resource="Message.hbm.xml"/>
+        <mapping class ="beans.User" resource="User.hbm.xml"/>
+        <mapping class ="beans.Liike" resource="Liike.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
+

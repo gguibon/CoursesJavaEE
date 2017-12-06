@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class entity-name="beans.Liike" name="beans.Liike" table="LIIKE" dynamic-update="false" dynamic-insert="false">
+        <cache usage="read-write"/>
+        <id name="liike_id" column="liike_id" type="java.lang.Long"><generator class="increment"/></id>
+        <many-to-one name="message" class="beans.Message" fetch="select" cascade="save-update">
+            <column name="id"  />
+        </many-to-one>
+		<property name="liike_author" type="java.lang.String" update="true" insert="true" access="property" column="liike_author"/>
+    </class>
+</hibernate-mapping>
