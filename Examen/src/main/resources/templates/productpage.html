@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Amuzon</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="css/shop-item.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Amuzon</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><button class="btn btn-danger" onclick="quit()">Quit</button></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-lg-3">
+				<h1 class="my-4">Amuzon</h1>
+				<div class="list-group">
+					<a href="/" class="list-group-item">Home</a>
+				</div>
+			</div>
+			<!-- /.col-lg-3 -->
+
+			<div class="col-lg-9">
+
+				<div id="productinfo" class="card mt-4">
+					<img class="card-img-top img-fluid"
+						src="http://placehold.it/900x400" alt=""></img>
+					<div class="card-body">
+						<p style="display: none;" id="productId" th:text="${productId}"></p>
+						<h3 class="card-title" th:text="${productTitle}">Product Name</h3>
+						<p class="card-text" th:text="${productDescription}">Lorem
+							ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+							dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id
+							dolores, sint aperiam sequi pariatur praesentium animi
+							perspiciatis molestias iure, ducimus!</p>
+						<span class="text-warning" th:text="${comments} + ' comments !'">0 comments</span>
+					</div>
+				</div>
+				<!-- /.card -->
+
+				<div class="card card-outline-secondary my-4">
+					<div class="card-header">Comments</div>
+					<div class="card-body" id="comments"></div>
+					<div class="card-footer">
+						<div class="form-group">
+							<label for="commentinput">Write a comment:</label> <input
+								type="text" class="form-control" id="commentinput"></input>
+						</div>
+						<button type="button" onclick="addComment()" class="btn btn-success">Add</button>
+					</div>
+				</div>
+				<!-- /.card -->
+
+			</div>
+			<!-- /.col-lg-9 -->
+
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/ajaxproductpage.js"></script>
+	<script>
+		
+	</script>
+
+</body>
+
+</html>
