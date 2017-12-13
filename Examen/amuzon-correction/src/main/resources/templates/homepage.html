@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Amuzon</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="css/shop-homepage.css" rel="stylesheet" />
+
+<link href="/css/animate.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Amuzon</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><button class="btn btn-danger"
+							onclick="quit()">Quit</button></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-lg-3">
+
+				<h1 class="my-4">Amuzon</h1>
+				<div class="list-group">
+					<a class="list-group-item active" href="#" onclick="getPreviews();">ALL</a>
+					<a class="list-group-item" href="#" onclick="getCategory($(this));">Computer</a>
+					<a class="list-group-item" href="#" onclick="getCategory($(this));">Clothes</a>
+					<a class="list-group-item" href="#" onclick="getCategory($(this));">Movies</a>
+				</div>
+
+			</div>
+			<!-- /.col-lg-3 -->
+
+			<div class="col-lg-9">
+
+				<div class="my-4 row">
+					<button id="btnAddProduct" type="button" class="btn btn-success"
+						data-toggle="modal" data-target="#myModal">
+						<i class="fa fa-plus" aria-hidden="true"></i> Add Product
+					</button>
+
+					<form method="POST" enctype="multipart/form-data" action="/">
+						<input type="file" name="file" style="display: none;"
+							id="uploadfile"
+							onchange="javascript:document.getElementById('uploadfile').form.submit();" />
+						<button id="btnImport" type="button" class="btn btn-success"
+							onclick="document.getElementById('uploadfile').click();">
+							<i class="fa fa-upload" aria-hidden="true"></i> Import File
+						</button>
+					</form>
+				</div>
+
+
+
+				<div id="myModal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Add a product</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="titleinput">Title:</label> <input type="text"
+										class="form-control" id="titleinput"></input>
+								</div>
+								<div class="form-group">
+									<label for="descriptioninput">Description:</label> <input
+										type="text" class="form-control" id="descriptioninput"></input>
+								</div>
+
+								<div class="form-group">
+									<label for="categoryselect">Category:</label> <select
+										class="form-control" id="categoryselect">
+										<option>Computer</option>
+										<option>Clothes</option>
+										<option>Movies</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary"
+									data-dismiss="modal" onclick="addProduct();">Confirm</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div id="carouselExampleIndicators" class="carousel slide my-4"
+					data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0"
+							class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div id="carousel" class="carousel-inner" role="listbox"></div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators"
+						role="button" data-slide="prev"> <span
+						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+						class="sr-only">Previous</span>
+					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+						role="button" data-slide="next"> <span
+						class="carousel-control-next-icon" aria-hidden="true"></span> <span
+						class="sr-only">Next</span>
+					</a>
+				</div>
+
+				<div id="previews" class="row"></div>
+
+			</div>
+			<!-- /.col-lg-9 -->
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/ajaxhomepage.js"></script>
+
+</body>
+
+</html>
