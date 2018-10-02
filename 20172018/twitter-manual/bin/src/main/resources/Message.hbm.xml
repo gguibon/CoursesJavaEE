@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class entity-name="beans.Message" name="beans.Message" table="MESSAGE" dynamic-update="false" dynamic-insert="false">
+        <cache usage="read-write"/>
+        <id name="id" column="ID" type="java.lang.String">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="content" type="java.lang.String" update="true" insert="true" access="property" column="content"/>
+        <property name="author" type="java.lang.String" update="true" insert="true" access="property" column="author"/>
+        <property name="date" type="java.lang.String" update="true" insert="true" access="property" column="date"/>
+    	<set name="likes" table="liike" inverse="true" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="id" not-null="true" />
+            </key>
+            <one-to-many class="beans.Liike"  />
+        </set>
+    </class>
+</hibernate-mapping>

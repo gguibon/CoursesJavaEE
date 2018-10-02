@@ -1,7 +1,13 @@
 # CoursesJavaEE
 -----
 
-Cours de JavaEE pour Master 2 AMU informatique. Le support de cours est dans le [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/javaEE_20172018.pdf).
+Cours de JavaEE pour Master 2 AMU informatique. 
+
+## Master 2 20182019
+
+## Master 2 20172018
+
+Le support de cours est dans le [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20172018/javaEE_20172018.pdf).
 
 - [basic_hello_word](https://github.com/gguibon/CoursesJavaEE/tree/master/basic_hello_world) : javaEE basic pour commencer
 - [servlet_usage](https://github.com/gguibon/CoursesJavaEE/tree/master/servlet_usage) : un petit exemple pour montrer l'utilisation sommaire de servlets
@@ -25,4 +31,4 @@ S'il vous manque maven, veuillez vous référer à la partie adéquate dans le [
 -----
 gael dot guibon at lsis.org
 
-@2017 LSIS-CNRS
+@2018 LSIS-CNRS
