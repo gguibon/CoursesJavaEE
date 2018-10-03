@@ -1,0 +1,2 @@
+INSERT INTO products(category,productTitle,img,description,date) values('clothes','shirt','none','a plain shirt','20180912');
+INSERT INTO products(category,productTitle,img,description,date) values('computer','gpu','none','nvidia 2080ti','20180913');
