@@ -1,6 +1,5 @@
 package fr.amu.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
@@ -14,13 +13,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProductDAOTests {
+public class ProductRepositoryTests {
 	
 	@Autowired
 	ProductRepository pr;
 	
-	private static Product product = new Product("category", "productTitle", "img", "description", "date");
-	private static Product product2 = new Product("computer", "productTitle2", "img", "a second product", "date");
+	private static Category category = new Category("computer");
+	private static Product product = new Product(category, "productTitle", "img", "description", "date");
+	private static Product product2 = new Product(category, "productTitle2", "img", "a second product", "date");
 	
 	@Test // dire que c'est un test (annotation classique de JUnit)
     @Transactional // pour gérer les transactions
@@ -46,7 +46,7 @@ public class ProductDAOTests {
 	@Rollback(true)
 	public void findByCategory() {
 		pr.save(product2); // soit on rempli à la main, soit on le fait via un data.sql dasn src/main/resources
-		List<Product> computerProducts = pr.findByCategory("computer"); 
+		List<Product> computerProducts = pr.findByCategory(category); 
 		Assert.assertTrue(computerProducts.size() == 1); // il ne devrait en trouver qu'un seul car un seul a la catégorie 'computer'
 	}
 	

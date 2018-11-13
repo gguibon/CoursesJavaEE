@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>tp2-with-jpa-simple</artifactId>
+	<artifactId>tp2-with-tests</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
@@ -95,31 +95,6 @@
 			<artifactId>popper.js</artifactId>
 			<version>1.14.4</version>
 		</dependency>
-		
-		
-		
-		<!-- pour les JPA on enlève Hibernate de la configuration classique (car ici on veut faire que du jpa) -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions> <!-- exclusion signifie qu'on enlève hibernate de l'ensemble de dépendance issues de spring boot starter data jpa  -->
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-entitymanager</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- à la place d'Hibernate nous utilisons l'implémentation JPA de référence : eclipse link -->
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>org.eclipse.persistence.jpa</artifactId>
-			<version>2.7.3</version> <!-- dernière version à partir de maven repository -->
-		</dependency>
-		
 
 	</dependencies>
 

@@ -29,7 +29,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import fr.amu.services.CategoryService;
 import fr.amu.services.ProductService;
 
 @RunWith(SpringRunner.class)
@@ -44,9 +43,6 @@ public class ProductControllerTests {
 	
 	@MockBean 
 	ProductService ps;
-	
-	@MockBean
-	CategoryService cs; // on a besoin de ce mock également. sinon il y aura un problème de chargement de contexte car il ets utilisé dans le controller
 
 	@Before
 	public void setup() {
