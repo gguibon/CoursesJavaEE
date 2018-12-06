@@ -1,0 +1,41 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+#foodlistview {
+	max-height: 65vh;
+	overflow-x:scroll;
+}
+
+.star {
+	/*color:#ffcc00;*/
+	color: white;
+}
+
+.EXCELLENT {
+	color: rgba(0, 255, 0, 1);
+}
+
+.GOOD {
+	color: rgba(0, 153, 51, 1);
+}
+
+.MEDIOCRE {
+	color: rgba(255, 102, 0, 1);
+}
+
+.BAD {
+	color: rgba(204, 0, 0, 1);
+}
