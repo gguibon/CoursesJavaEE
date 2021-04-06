@@ -7,7 +7,12 @@ Cours de JavaEE pour Master 2 AMU informatique.
 
 Les projets et l'examen et sa correction se trouvent [ici](https://github.com/gguibon/CoursesJavaEE/tree/master/20182019).
 
-Le support de cours est dans le [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20172018/javaEE_20172018.pdf).
+Les supports de cours sont ici :
+- CM 1 : [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20182019/cm1_beans_services_dao.pdf)
+- CM 2 : [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20182019/cm2_servlets_controllers_view_el-jstl.pdf)
+- CM 3 : [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20182019/cm3-tests.pdf)
+
+Le support de TD est dans le [PDF](https://github.com/gguibon/CoursesJavaEE/blob/master/20182019/jee_tp20182019.pdf).
 
 ### Concepts étudiés
 
