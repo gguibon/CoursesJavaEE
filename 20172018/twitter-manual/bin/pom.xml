@@ -7,7 +7,7 @@
 	<name>twitter example</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<tomcat.version>8.5.21</tomcat.version>
+		<tomcat.version>8.5.61</tomcat.version>
 	</properties>
 	<dependencies>
 		<dependency>
